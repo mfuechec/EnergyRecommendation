@@ -1,0 +1,414 @@
+{
+  "data_source": "arbor_ai_analysis_engine",
+  "description": "AI-generated insights about customer usage patterns and financial situations. This data is computed by GPT-4 and cached with TTL.",
+  "last_updated": "2025-01-11T10:15:00Z",
+
+  "insights": [
+    {
+      "customer_id": "CUST_001",
+      "analysis_version": "2.3",
+      "generated_at": "2025-01-11T10:15:00Z",
+      "expires_at": "2025-02-11T10:15:00Z",
+      "cache_ttl_days": 30,
+
+      "usage_analysis": {
+        "pattern_type": "balanced_seasonal",
+        "pattern_description": "Moderate variation between seasons with both summer cooling and winter heating peaks",
+        "total_annual_kwh": 11400,
+        "avg_monthly_kwh": 950,
+        "peak_month": "August",
+        "peak_kwh": 1220,
+        "low_month": "April",
+        "low_kwh": 750,
+        "seasonal_variance_pct": 62.7,
+        "summer_avg_kwh": 1092,
+        "winter_avg_kwh": 947,
+        "stability_score": 0.73,
+        "usage_predictability": "high"
+      },
+
+      "financial_analysis": {
+        "current_annual_cost": 1658.40,
+        "current_avg_monthly_bill": 138.20,
+        "years_on_current_plan": 4.0,
+        "tenure_category": "long_term_loyal",
+
+        "rate_trend": {
+          "direction": "increasing",
+          "original_rate": 0.114,
+          "current_rate": 0.135,
+          "total_increase_pct": 18.4,
+          "total_increase_absolute": 0.021,
+          "increases_count": 3,
+          "avg_annual_increase_pct": 4.6
+        },
+
+        "vs_market_average": {
+          "market_avg_rate": 0.118,
+          "market_avg_annual_cost": 1344,
+          "overpaying_pct": 14.4,
+          "overpaying_absolute": 0.017,
+          "estimated_annual_overpayment": 314,
+          "percentile_rank": 82
+        }
+      },
+
+      "customer_segment": "loyalty_penalty_victim",
+      "segment_confidence": 0.95,
+      "segment_description": "Long-term customer experiencing systematic rate increases without shopping around",
+
+      "risk_factors": [
+        "rate_creep",
+        "no_plan_shopping_history",
+        "above_market_rate",
+        "inertia_risk"
+      ],
+
+      "opportunities": [
+        "supplier_switch_high_savings",
+        "renewable_upgrade_available",
+        "no_behavior_change_needed"
+      ],
+
+      "ai_recommendation_priority": "supplier_switch",
+      "estimated_max_savings": 427,
+      "confidence_score": 0.92
+    },
+
+    {
+      "customer_id": "CUST_002",
+      "analysis_version": "2.3",
+      "generated_at": "2025-01-11T10:16:00Z",
+      "expires_at": "2025-02-11T10:16:00Z",
+      "cache_ttl_days": 30,
+
+      "usage_analysis": {
+        "pattern_type": "extreme_summer_spike",
+        "pattern_description": "Low baseline usage with dramatic increase during summer months, indicating heavy AC usage",
+        "total_annual_kwh": 11500,
+        "avg_monthly_kwh": 958,
+        "peak_month": "August",
+        "peak_kwh": 1750,
+        "low_month": "April",
+        "low_kwh": 580,
+        "seasonal_variance_pct": 201.7,
+        "summer_avg_kwh": 1508,
+        "winter_avg_kwh": 680,
+        "stability_score": 0.42,
+        "usage_predictability": "moderate",
+        "summer_concentration_pct": 52.3
+      },
+
+      "financial_analysis": {
+        "current_annual_cost": 1545.00,
+        "current_avg_monthly_bill": 128.75,
+        "summer_avg_monthly_bill": 226.54,
+        "winter_avg_monthly_bill": 72.37,
+        "years_on_current_plan": 1.0,
+        "tenure_category": "recent_signup",
+
+        "rate_trend": {
+          "direction": "stable",
+          "original_rate": 0.095,
+          "current_rate": 0.095,
+          "total_increase_pct": 0,
+          "total_increase_absolute": 0,
+          "increases_count": 0,
+          "note": "Variable rate plan - base rate stable but peak rate exposure"
+        },
+
+        "vs_market_average": {
+          "market_avg_rate": 0.118,
+          "market_avg_annual_cost": 1356,
+          "overpaying_pct": 13.9,
+          "overpaying_absolute": 0,
+          "estimated_annual_overpayment": 189,
+          "percentile_rank": 79,
+          "note": "Appears cheap on base rate but expensive due to peak month exposure"
+        }
+      },
+
+      "customer_segment": "variable_rate_victim",
+      "segment_confidence": 0.91,
+      "segment_description": "Customer with high seasonal variance being exploited by variable rate structure",
+
+      "risk_factors": [
+        "variable_rate_exposure",
+        "summer_bill_shock",
+        "peak_month_vulnerability",
+        "work_from_home_ac_usage"
+      ],
+
+      "opportunities": [
+        "supplier_switch_fixed_rate",
+        "budget_predictability",
+        "eliminate_summer_spikes"
+      ],
+
+      "ai_recommendation_priority": "supplier_switch",
+      "estimated_max_savings": 280,
+      "confidence_score": 0.89
+    },
+
+    {
+      "customer_id": "CUST_003",
+      "analysis_version": "2.3",
+      "generated_at": "2025-01-11T10:17:00Z",
+      "expires_at": "2025-02-11T10:17:00Z",
+      "cache_ttl_days": 30,
+
+      "usage_analysis": {
+        "pattern_type": "solar_high_offset",
+        "pattern_description": "Strong solar generation offsetting most consumption, with seasonal excess production",
+        "total_annual_kwh": 13400,
+        "total_consumption_kwh": 13400,
+        "total_generation_kwh": 12900,
+        "net_grid_purchase_kwh": 1090,
+        "total_excess_generation_kwh": 590,
+        "solar_offset_percentage": 96.3,
+        "avg_monthly_kwh": 1117,
+        "avg_monthly_consumption": 1117,
+        "avg_monthly_generation": 1075,
+        "peak_month": "August",
+        "peak_kwh": 1350,
+        "low_month": "February",
+        "low_kwh": 880,
+        "seasonal_variance_pct": 53.4,
+        "summer_avg_kwh": 1245,
+        "winter_avg_kwh": 1008,
+        "stability_score": 0.78,
+        "usage_predictability": "high",
+        "excess_generation_months": ["March", "April", "May", "October"],
+        "net_purchase_months": ["January", "February", "June", "July", "August", "September", "November", "December"],
+        "solar_performance": "excellent"
+      },
+
+      "financial_analysis": {
+        "current_annual_cost": 220.00,
+        "buyback_credits_received": 38.35,
+        "effective_annual_cost": 181.65,
+        "years_on_current_plan": 2.1,
+        "tenure_category": "mid_term",
+
+        "solar_roi_analysis": {
+          "system_investment": 18000,
+          "current_annual_benefit": 38.35,
+          "current_payback_years": 82.0,
+          "potential_annual_benefit_better_plan": 325,
+          "potential_payback_years_better_plan": 36,
+          "roi_improvement_opportunity": "high"
+        },
+
+        "rate_trend": {
+          "direction": "stable",
+          "original_rate": 0.120,
+          "current_rate": 0.120,
+          "total_increase_pct": 0,
+          "total_increase_absolute": 0,
+          "increases_count": 0
+        },
+
+        "vs_market_average": {
+          "market_avg_buyback_rate": 0.095,
+          "current_buyback_rate": 0.065,
+          "buyback_rate_disadvantage": 0.030,
+          "lost_annual_value": 17.70,
+          "note": "Wholesale buyback severely undervaluing excess generation"
+        }
+      },
+
+      "customer_segment": "solar_buyback_victim",
+      "segment_confidence": 0.97,
+      "segment_description": "Solar owner receiving wholesale buyback rates when retail-rate plans are available",
+
+      "risk_factors": [
+        "poor_buyback_rate",
+        "solar_roi_impaired",
+        "locked_in_contract"
+      ],
+
+      "opportunities": [
+        "supplier_switch_better_buyback",
+        "negative_annual_cost_possible",
+        "solar_roi_improvement",
+        "contract_termination_may_be_worth_fee"
+      ],
+
+      "ai_recommendation_priority": "supplier_switch",
+      "estimated_max_savings": 287,
+      "confidence_score": 0.94,
+      "special_notes": "Could achieve negative annual electricity cost with optimal plan"
+    },
+
+    {
+      "customer_id": "CUST_004",
+      "analysis_version": "2.3",
+      "generated_at": "2025-01-11T10:18:00Z",
+      "expires_at": "2025-02-11T10:18:00Z",
+      "cache_ttl_days": 30,
+
+      "usage_analysis": {
+        "pattern_type": "consistent_ev_charging",
+        "pattern_description": "Stable elevated usage with consistent 400 kWh monthly increment indicating regular EV charging",
+        "total_annual_kwh": 14150,
+        "avg_monthly_kwh": 1179,
+        "baseline_avg_kwh": 779,
+        "ev_monthly_kwh_detected": 400,
+        "ev_percentage_of_total": 33.9,
+        "peak_month": "August",
+        "peak_kwh": 1620,
+        "low_month": "April",
+        "low_kwh": 1080,
+        "seasonal_variance_pct": 50.0,
+        "stability_score": 0.81,
+        "ev_charging_pattern_detected": "likely_overnight",
+        "ev_optimization_opportunity": "high"
+      },
+
+      "financial_analysis": {
+        "current_annual_cost": 1789.65,
+        "current_avg_monthly_bill": 149.14,
+        "ev_portion_of_annual_cost": 566.40,
+        "baseline_portion_of_annual_cost": 1223.25,
+        "years_on_current_plan": 1.0,
+        "tenure_category": "recent_signup",
+
+        "rate_trend": {
+          "direction": "stable",
+          "original_rate": 0.118,
+          "current_rate": 0.118,
+          "total_increase_pct": 0,
+          "total_increase_absolute": 0,
+          "increases_count": 0
+        },
+
+        "vs_market_average": {
+          "market_avg_rate": 0.118,
+          "market_avg_annual_cost": 1669,
+          "overpaying_pct": 7.2,
+          "overpaying_absolute": 0,
+          "estimated_annual_overpayment": 121,
+          "note": "Flat rate plan - not optimized for time-of-use EV charging"
+        }
+      },
+
+      "customer_segment": "ev_owner_flat_rate",
+      "segment_confidence": 0.88,
+      "segment_description": "EV owner likely already charging overnight but on flat-rate plan",
+
+      "risk_factors": [
+        "missing_tou_savings",
+        "ev_charging_not_optimized_for_plan"
+      ],
+
+      "opportunities": [
+        "supplier_switch_tou_plan",
+        "ev_charging_cost_reduction",
+        "no_behavior_change_needed",
+        "super_offpeak_rate_available"
+      ],
+
+      "behavior_analysis": {
+        "detected_overnight_usage_increase": true,
+        "confidence": 0.85,
+        "hypothesis": "Customer already charging during optimal hours based on usage curve",
+        "recommendation": "Maintain current charging behavior but switch to TOU plan"
+      },
+
+      "ai_recommendation_priority": "supplier_switch_plus_behavior",
+      "estimated_max_savings": 365,
+      "confidence_score": 0.87
+    },
+
+    {
+      "customer_id": "CUST_005",
+      "analysis_version": "2.3",
+      "generated_at": "2025-01-11T10:19:00Z",
+      "expires_at": "2025-02-11T10:19:00Z",
+      "cache_ttl_days": 30,
+
+      "usage_analysis": {
+        "pattern_type": "seasonal_with_pool",
+        "pattern_description": "Moderate baseline with seasonal pool usage creating summer spike",
+        "total_annual_kwh": 15960,
+        "avg_monthly_kwh": 1330,
+        "baseline_avg_kwh": 1023,
+        "pool_avg_monthly_kwh": 307,
+        "pool_percentage_of_total": 23.1,
+        "peak_month": "August",
+        "peak_kwh": 1880,
+        "low_month": "February",
+        "low_kwh": 980,
+        "seasonal_variance_pct": 91.8,
+        "stability_score": 0.58,
+        "pool_season_detected": "March through October"
+      },
+
+      "financial_analysis": {
+        "current_annual_cost": 1955.35,
+        "current_avg_monthly_bill": 162.95,
+        "pool_portion_of_annual_cost": 423.00,
+        "baseline_portion_of_annual_cost": 1532.35,
+        "years_on_current_plan": 0.9,
+        "tenure_category": "recent_signup",
+
+        "rate_trend": {
+          "direction": "stable",
+          "original_rate": 0.115,
+          "current_rate": 0.115,
+          "total_increase_pct": 0,
+          "total_increase_absolute": 0,
+          "increases_count": 0
+        },
+
+        "vs_market_average": {
+          "market_avg_rate": 0.118,
+          "market_avg_annual_cost": 1883,
+          "overpaying_pct": 3.8,
+          "overpaying_absolute": -0.003,
+          "estimated_annual_overpayment": 72,
+          "note": "Decent rate but plan structure not optimized for pool operation"
+        }
+      },
+
+      "customer_segment": "pool_owner_peak_usage",
+      "segment_confidence": 0.92,
+      "segment_description": "Pool owner running equipment during peak hours on flat-rate plan",
+
+      "risk_factors": [
+        "pool_peak_hour_operation",
+        "missing_tou_optimization",
+        "behavior_change_opportunity_not_realized"
+      ],
+
+      "opportunities": [
+        "behavior_optimization_pool_timer",
+        "supplier_switch_tou_plan",
+        "combined_savings_high",
+        "one_time_equipment_investment"
+      ],
+
+      "behavior_analysis": {
+        "pool_current_schedule_assumed": "2pm-10pm",
+        "pool_optimal_schedule": "10pm-6am",
+        "timer_cost_estimate": 75,
+        "behavior_change_difficulty": "easy",
+        "lifestyle_impact": "zero",
+        "one_time_setup_required": true
+      },
+
+      "ai_recommendation_priority": "behavior_plus_supplier_switch",
+      "estimated_max_savings": 407,
+      "confidence_score": 0.91,
+      "special_notes": "High ROI behavior change - timer pays for itself in 2.3 months"
+    }
+  ],
+
+  "metadata": {
+    "analysis_engine_version": "2.3",
+    "ai_model": "gpt-4",
+    "analysis_inputs": ["raw_utility_data", "user_profile", "supplier_catalog", "market_benchmarks"],
+    "cache_strategy": "30_day_ttl_or_until_data_change",
+    "notes": "This layer represents what the AI has learned about each customer. In demo, pre-generated for reliability. In production, generated on-demand and cached."
+  }
+}

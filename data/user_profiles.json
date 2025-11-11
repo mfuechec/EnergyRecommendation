@@ -1,0 +1,231 @@
+{
+  "data_source": "arbor_onboarding_system",
+  "description": "User-provided information collected during account setup and preferences management",
+  "last_updated": "2025-01-11T10:00:00Z",
+
+  "profiles": [
+    {
+      "customer_id": "CUST_001",
+      "personal": {
+        "display_name": "Sarah Mitchell",
+        "email": "sarah.m@example.com",
+        "created_at": "2025-01-05T14:30:00Z",
+        "onboarding_completed": true
+      },
+      "home_attributes": {
+        "home_type": "single_family",
+        "square_feet": 1800,
+        "year_built": 2015,
+        "occupants": 2,
+        "bedrooms": 3,
+        "has_solar": false,
+        "solar_system_kw": null,
+        "solar_install_date": null,
+        "has_ev": false,
+        "ev_make_model": null,
+        "ev_charging_location": null,
+        "ev_typical_charging_time": null,
+        "has_pool": false,
+        "pool_size_gallons": null,
+        "pool_equipment_schedule": null,
+        "has_hot_tub": false,
+        "work_from_home": false,
+        "heating_type": "electric_heat_pump",
+        "cooling_type": "central_ac",
+        "water_heater_type": "electric_standard"
+      },
+      "preferences": {
+        "primary_concern": "cost_savings",
+        "renewable_priority": "moderate",
+        "max_contract_months": 12,
+        "willing_to_change_behavior": true,
+        "notifications_enabled": true,
+        "notification_types": ["better_plan_available", "rate_change_alert", "monthly_summary"],
+        "language": "en",
+        "updated_at": "2025-01-05T14:35:00Z"
+      }
+    },
+
+    {
+      "customer_id": "CUST_002",
+      "personal": {
+        "display_name": "Mike Rodriguez",
+        "email": "mike.r@example.com",
+        "created_at": "2025-01-06T09:15:00Z",
+        "onboarding_completed": true
+      },
+      "home_attributes": {
+        "home_type": "townhouse",
+        "square_feet": 1600,
+        "year_built": 2018,
+        "occupants": 1,
+        "bedrooms": 2,
+        "has_solar": false,
+        "solar_system_kw": null,
+        "solar_install_date": null,
+        "has_ev": false,
+        "ev_make_model": null,
+        "ev_charging_location": null,
+        "ev_typical_charging_time": null,
+        "has_pool": false,
+        "pool_size_gallons": null,
+        "pool_equipment_schedule": null,
+        "has_hot_tub": false,
+        "work_from_home": true,
+        "heating_type": "electric_heat_pump",
+        "cooling_type": "central_ac",
+        "water_heater_type": "electric_tankless"
+      },
+      "preferences": {
+        "primary_concern": "cost_savings",
+        "renewable_priority": "low",
+        "max_contract_months": 12,
+        "willing_to_change_behavior": false,
+        "notifications_enabled": true,
+        "notification_types": ["better_plan_available", "bill_spike_alert"],
+        "language": "en",
+        "updated_at": "2025-01-06T09:20:00Z"
+      }
+    },
+
+    {
+      "customer_id": "CUST_003",
+      "personal": {
+        "display_name": "David Park",
+        "email": "david.park@example.com",
+        "created_at": "2025-01-07T11:45:00Z",
+        "onboarding_completed": true
+      },
+      "home_attributes": {
+        "home_type": "single_family",
+        "square_feet": 2200,
+        "year_built": 2010,
+        "occupants": 3,
+        "bedrooms": 4,
+        "has_solar": true,
+        "solar_system_kw": 8.5,
+        "solar_install_date": "2022-11-01",
+        "solar_investment_amount": 18000,
+        "has_ev": false,
+        "ev_make_model": null,
+        "ev_charging_location": null,
+        "ev_typical_charging_time": null,
+        "has_pool": false,
+        "pool_size_gallons": null,
+        "pool_equipment_schedule": null,
+        "has_hot_tub": false,
+        "work_from_home": false,
+        "heating_type": "electric_heat_pump",
+        "cooling_type": "central_ac",
+        "water_heater_type": "electric_standard"
+      },
+      "preferences": {
+        "primary_concern": "balanced",
+        "renewable_priority": "high",
+        "max_contract_months": 24,
+        "willing_to_change_behavior": true,
+        "notifications_enabled": true,
+        "notification_types": ["better_plan_available", "solar_optimization", "monthly_summary"],
+        "language": "en",
+        "updated_at": "2025-01-07T11:50:00Z"
+      }
+    },
+
+    {
+      "customer_id": "CUST_004",
+      "personal": {
+        "display_name": "Jessica Chen",
+        "email": "jessica.chen@example.com",
+        "created_at": "2025-01-08T16:20:00Z",
+        "onboarding_completed": true
+      },
+      "home_attributes": {
+        "home_type": "single_family",
+        "square_feet": 1900,
+        "year_built": 2017,
+        "occupants": 2,
+        "bedrooms": 3,
+        "has_solar": false,
+        "solar_system_kw": null,
+        "solar_install_date": null,
+        "has_ev": true,
+        "ev_make_model": "Tesla Model 3",
+        "ev_year": 2023,
+        "ev_battery_kwh": 75,
+        "ev_charging_location": "home_level2",
+        "ev_typical_charging_time": "11pm-7am",
+        "ev_monthly_kwh_estimate": 400,
+        "has_pool": false,
+        "pool_size_gallons": null,
+        "pool_equipment_schedule": null,
+        "has_hot_tub": false,
+        "work_from_home": false,
+        "heating_type": "electric_heat_pump",
+        "cooling_type": "central_ac",
+        "water_heater_type": "electric_heat_pump"
+      },
+      "preferences": {
+        "primary_concern": "balanced",
+        "renewable_priority": "high",
+        "max_contract_months": 12,
+        "willing_to_change_behavior": true,
+        "notifications_enabled": true,
+        "notification_types": ["better_plan_available", "ev_optimization", "rate_change_alert", "monthly_summary"],
+        "language": "en",
+        "updated_at": "2025-01-08T16:25:00Z"
+      }
+    },
+
+    {
+      "customer_id": "CUST_005",
+      "personal": {
+        "display_name": "Marcus & Lisa Thompson",
+        "email": "thompson.family@example.com",
+        "created_at": "2025-01-09T13:00:00Z",
+        "onboarding_completed": true
+      },
+      "home_attributes": {
+        "home_type": "single_family",
+        "square_feet": 2400,
+        "year_built": 2012,
+        "occupants": 4,
+        "bedrooms": 4,
+        "has_solar": false,
+        "solar_system_kw": null,
+        "solar_install_date": null,
+        "has_ev": false,
+        "ev_make_model": null,
+        "ev_charging_location": null,
+        "ev_typical_charging_time": null,
+        "has_pool": true,
+        "pool_size_gallons": 20000,
+        "pool_type": "in_ground",
+        "pool_equipment": "pump_heater",
+        "pool_equipment_schedule": "2pm-10pm",
+        "pool_optimized": false,
+        "has_hot_tub": false,
+        "work_from_home": false,
+        "heating_type": "electric_heat_pump",
+        "cooling_type": "central_ac",
+        "water_heater_type": "electric_standard"
+      },
+      "preferences": {
+        "primary_concern": "cost_savings",
+        "renewable_priority": "moderate",
+        "max_contract_months": 12,
+        "willing_to_change_behavior": true,
+        "notifications_enabled": true,
+        "notification_types": ["better_plan_available", "behavior_optimization", "monthly_summary"],
+        "language": "en",
+        "updated_at": "2025-01-09T13:05:00Z"
+      }
+    }
+  ],
+
+  "metadata": {
+    "onboarding_version": "2.1",
+    "required_fields": ["home_type", "occupants", "primary_concern"],
+    "optional_fields": ["square_feet", "year_built", "specific_appliances"],
+    "notes": "All data self-reported by users during onboarding flow. Used to contextualize AI recommendations."
+  }
+}

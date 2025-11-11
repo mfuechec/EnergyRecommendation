@@ -1,0 +1,246 @@
+{
+  "description": "Time-of-use distribution assumptions for calculating projected costs on TOU plans. Since hourly smart meter data is not available in demo, these assumptions model typical usage patterns.",
+  "version": "1.0",
+  "last_updated": "2025-01-11T10:00:00Z",
+
+  "tou_rate_periods": {
+    "peak": {
+      "hours": "3pm-8pm Mon-Fri",
+      "description": "Highest demand period when grid is stressed",
+      "typical_rate_multiplier": 1.8
+    },
+    "offpeak": {
+      "hours": "8pm-11pm, 7am-3pm all days, all day weekends",
+      "description": "Moderate demand periods",
+      "typical_rate_multiplier": 1.0
+    },
+    "super_offpeak": {
+      "hours": "11pm-7am all days",
+      "description": "Lowest demand overnight period",
+      "typical_rate_multiplier": 0.5
+    }
+  },
+
+  "baseline_residential_assumptions": {
+    "description": "Typical time-of-use distribution for standard residential customers without special loads (no EV, no pool)",
+    "peak_pct": 0.20,
+    "offpeak_pct": 0.50,
+    "super_offpeak_pct": 0.30,
+    "confidence": "medium",
+    "source": "Industry research on residential usage patterns",
+    "notes": [
+      "20% during peak: Cooking dinner, evening activities",
+      "50% during off-peak: Daytime appliances, weekends",
+      "30% during super off-peak: HVAC overnight, always-on loads"
+    ]
+  },
+
+  "customer_type_adjustments": {
+    "work_from_home": {
+      "description": "People working from home use more electricity during typical off-peak daytime hours",
+      "peak_pct": 0.18,
+      "offpeak_pct": 0.58,
+      "super_offpeak_pct": 0.24,
+      "notes": "Higher daytime usage for computers, lighting, climate control"
+    },
+
+    "retired_elderly": {
+      "description": "Retirees tend to have more evenly distributed usage throughout the day",
+      "peak_pct": 0.22,
+      "offpeak_pct": 0.55,
+      "super_offpeak_pct": 0.23,
+      "notes": "Home all day, less overnight usage"
+    },
+
+    "young_professionals": {
+      "description": "Away during day, heavy usage in evenings",
+      "peak_pct": 0.28,
+      "offpeak_pct": 0.42,
+      "super_offpeak_pct": 0.30,
+      "notes": "Higher peak usage - cooking, entertainment after work"
+    }
+  },
+
+  "special_load_handling": {
+    "ev_charging": {
+      "description": "EV charging patterns and TOU optimization",
+
+      "scenario_already_optimized": {
+        "description": "Customer already charges overnight (detected from usage curve)",
+        "ev_load_distribution": {
+          "peak_pct": 0,
+          "offpeak_pct": 0.10,
+          "super_offpeak_pct": 0.90
+        },
+        "behavior_change_required": false,
+        "notes": "90% of EV charging happens during super off-peak (11pm-7am)"
+      },
+
+      "scenario_not_optimized": {
+        "description": "Customer charging during peak or off-peak hours",
+        "ev_load_distribution": {
+          "peak_pct": 0.30,
+          "offpeak_pct": 0.50,
+          "super_offpeak_pct": 0.20
+        },
+        "behavior_change_required": true,
+        "optimization_opportunity": "high",
+        "notes": "Could shift 70% of charging to super off-peak with behavior change"
+      },
+
+      "typical_ev_monthly_kwh": 400,
+      "charging_efficiency": 0.90
+    },
+
+    "pool_equipment": {
+      "description": "Pool pump and heating equipment operation patterns",
+
+      "scenario_current_peak_hours": {
+        "description": "Pool equipment running during afternoon/evening peak hours",
+        "pool_load_distribution": {
+          "peak_pct": 1.0,
+          "offpeak_pct": 0,
+          "super_offpeak_pct": 0
+        },
+        "typical_schedule": "2pm-10pm",
+        "behavior_change_required": false,
+        "notes": "100% of pool usage during peak - worst case scenario"
+      },
+
+      "scenario_optimized_overnight": {
+        "description": "Pool equipment shifted to overnight operation with timer",
+        "pool_load_distribution": {
+          "peak_pct": 0,
+          "offpeak_pct": 0,
+          "super_offpeak_pct": 1.0
+        },
+        "typical_schedule": "10pm-6am",
+        "behavior_change_required": true,
+        "implementation": {
+          "equipment_needed": "programmable_timer",
+          "cost": 75,
+          "installation_difficulty": "easy_diy",
+          "time_to_implement": "30_minutes"
+        },
+        "notes": "100% of pool usage during super off-peak - optimal"
+      },
+
+      "typical_pool_monthly_kwh": {
+        "20000_gallon_pool": 350,
+        "30000_gallon_pool": 500,
+        "with_heater": 450,
+        "without_heater": 250
+      }
+    },
+
+    "solar_generation": {
+      "description": "Solar generation timing patterns",
+      "generation_distribution": {
+        "peak_pct": 0.65,
+        "offpeak_pct": 0.35,
+        "super_offpeak_pct": 0
+      },
+      "notes": [
+        "Solar generates during daytime, peaks 11am-4pm",
+        "Overlaps significantly with peak rate period",
+        "Zero generation overnight (super off-peak period)",
+        "Best value when excess sells at retail or near-retail rates"
+      ]
+    }
+  },
+
+  "calculation_examples": {
+    "example_baseline_home": {
+      "description": "Standard home, 1000 kWh/month, TOU plan with $0.160 peak / $0.075 off-peak / $0.045 super off-peak",
+      "calculation": {
+        "peak_kwh": 200,
+        "peak_cost": 32.00,
+        "offpeak_kwh": 500,
+        "offpeak_cost": 37.50,
+        "super_offpeak_kwh": 300,
+        "super_offpeak_cost": 13.50,
+        "total_cost": 83.00,
+        "effective_rate": 0.083
+      },
+      "vs_flat_rate": {
+        "flat_rate": 0.115,
+        "flat_cost": 115.00,
+        "savings": 32.00,
+        "savings_pct": 27.8
+      }
+    },
+
+    "example_ev_owner_optimized": {
+      "description": "Home with EV, 1400 kWh/month (1000 baseline + 400 EV), EV charging overnight, same TOU plan",
+      "calculation": {
+        "baseline_peak_kwh": 200,
+        "baseline_peak_cost": 32.00,
+        "baseline_offpeak_kwh": 500,
+        "baseline_offpeak_cost": 37.50,
+        "baseline_super_offpeak_kwh": 300,
+        "baseline_super_offpeak_cost": 13.50,
+        "ev_super_offpeak_kwh": 360,
+        "ev_super_offpeak_cost": 16.20,
+        "ev_offpeak_kwh": 40,
+        "ev_offpeak_cost": 3.00,
+        "total_cost": 102.20,
+        "effective_rate": 0.073
+      },
+      "vs_flat_rate": {
+        "flat_rate": 0.115,
+        "flat_cost": 161.00,
+        "savings": 58.80,
+        "savings_pct": 36.5
+      }
+    },
+
+    "example_pool_owner_optimized": {
+      "description": "Home with pool, 1350 kWh/month (1000 baseline + 350 pool), pool shifted to overnight",
+      "calculation": {
+        "baseline_peak_kwh": 200,
+        "baseline_peak_cost": 32.00,
+        "baseline_offpeak_kwh": 500,
+        "baseline_offpeak_cost": 37.50,
+        "baseline_super_offpeak_kwh": 300,
+        "baseline_super_offpeak_cost": 13.50,
+        "pool_super_offpeak_kwh": 350,
+        "pool_super_offpeak_cost": 15.75,
+        "total_cost": 98.75,
+        "effective_rate": 0.073
+      },
+      "vs_pool_at_peak": {
+        "pool_peak_cost": 56.00,
+        "pool_optimized_cost": 15.75,
+        "annual_pool_savings": 483.00
+      },
+      "vs_flat_rate": {
+        "flat_rate": 0.115,
+        "flat_cost": 155.25,
+        "savings": 56.50,
+        "savings_pct": 36.4
+      }
+    }
+  },
+
+  "metadata": {
+    "assumptions_based_on": [
+      "ERCOT grid load curves",
+      "Austin Energy smart meter aggregate data",
+      "Industry research on TOU adoption",
+      "EV charging behavior studies"
+    ],
+    "limitations": [
+      "Individual households vary significantly",
+      "Actual savings depend on behavior",
+      "Weather impacts not modeled in detail",
+      "Assumes consistent usage patterns"
+    ],
+    "confidence_levels": {
+      "baseline_residential": "medium",
+      "ev_charging_optimized": "high",
+      "pool_equipment_timing": "high",
+      "work_from_home_patterns": "medium"
+    },
+    "notes": "For production system with hourly smart meter data, these assumptions would be replaced with actual usage curves. For demo, these provide realistic cost projections."
+  }
+}

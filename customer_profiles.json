@@ -1,0 +1,452 @@
+{
+    "customers": [
+      {
+        "customer_id": "CUST_001",
+        "scenario_type": "supplier_switch",
+        "customer_name": "Sarah Mitchell",
+        "location": "Austin, TX",
+        "zip_code": "78704",
+        "customer_type": "residential",
+        "profile_description": "Loyal customer on same plan for 4 years, rates have increased over time",
+        
+        "usage_history": [
+          { "month": "2024-01", "kwh": 1050 },
+          { "month": "2024-02", "kwh": 980 },
+          { "month": "2024-03", "kwh": 820 },
+          { "month": "2024-04", "kwh": 750 },
+          { "month": "2024-05", "kwh": 780 },
+          { "month": "2024-06", "kwh": 920 },
+          { "month": "2024-07", "kwh": 1150 },
+          { "month": "2024-08", "kwh": 1220 },
+          { "month": "2024-09", "kwh": 1080 },
+          { "month": "2024-10", "kwh": 850 },
+          { "month": "2024-11", "kwh": 790 },
+          { "month": "2024-12", "kwh": 1010 }
+        ],
+        
+        "usage_stats": {
+          "total_annual_kwh": 11400,
+          "avg_monthly_kwh": 950,
+          "peak_month": "August",
+          "peak_kwh": 1220,
+          "low_month": "April", 
+          "low_kwh": 750,
+          "usage_pattern": "Balanced with summer and winter peaks"
+        },
+        
+        "current_plan": {
+          "provider": "TXU Energy",
+          "plan_name": "TXU Energy Secure 12",
+          "plan_id": "PLAN_003",
+          "rate_per_kwh": 0.135,
+          "monthly_fee": 9.95,
+          "rate_structure": "fixed",
+          "contract_start_date": "2021-01-15",
+          "contract_end_date": null,
+          "contract_length_months": 0,
+          "early_termination_fee": 0,
+          "renewable_percentage": 18,
+          "years_on_plan": 4.0,
+          "rate_history": [
+            { "date": "2021-01-15", "rate": 0.114, "note": "Original signup rate" },
+            { "date": "2022-03-01", "rate": 0.122, "note": "7% increase" },
+            { "date": "2023-06-01", "rate": 0.130, "note": "6.6% increase" },
+            { "date": "2024-09-01", "rate": 0.135, "note": "3.8% increase - current" }
+          ]
+        },
+        
+        "current_annual_cost": 1658.40,
+        "current_avg_monthly_bill": 138.20,
+        
+        "demo_talking_points": {
+          "problem": "Loyal for 4 years but rates have increased 18% from $0.114 to $0.135",
+          "emotional_hook": "Loyalty penalty - being punished for not shopping around",
+          "expected_savings_range": "300-400/year"
+        }
+      },
+  
+      {
+        "customer_id": "CUST_002",
+        "scenario_type": "supplier_switch",
+        "customer_name": "Mike Rodriguez",
+        "location": "Austin, TX",
+        "zip_code": "78745",
+        "customer_type": "residential",
+        "profile_description": "Work-from-home professional with variable rate plan, summer usage spikes dramatically",
+        
+        "usage_history": [
+          { "month": "2024-01", "kwh": 680 },
+          { "month": "2024-02", "kwh": 650 },
+          { "month": "2024-03", "kwh": 620 },
+          { "month": "2024-04", "kwh": 580 },
+          { "month": "2024-05", "kwh": 720 },
+          { "month": "2024-06", "kwh": 1180 },
+          { "month": "2024-07", "kwh": 1680 },
+          { "month": "2024-08", "kwh": 1750 },
+          { "month": "2024-09", "kwh": 1420 },
+          { "month": "2024-10", "kwh": 820 },
+          { "month": "2024-11", "kwh": 690 },
+          { "month": "2024-12", "kwh": 710 }
+        ],
+        
+        "usage_stats": {
+          "total_annual_kwh": 11500,
+          "avg_monthly_kwh": 958,
+          "peak_month": "August",
+          "peak_kwh": 1750,
+          "low_month": "April",
+          "low_kwh": 580,
+          "summer_avg_kwh": 1508,
+          "winter_avg_kwh": 680,
+          "usage_pattern": "Extreme summer spike due to AC while working from home"
+        },
+        
+        "current_plan": {
+          "provider": "Pulse Power",
+          "plan_name": "Smart Saver Month-to-Month",
+          "plan_id": "PLAN_011",
+          "rate_per_kwh_base": 0.095,
+          "rate_per_kwh_peak": 0.145,
+          "peak_months": [6, 7, 8, 9],
+          "monthly_fee": 9.95,
+          "rate_structure": "variable",
+          "contract_start_date": "2024-01-01",
+          "contract_end_date": null,
+          "contract_length_months": 0,
+          "early_termination_fee": 0,
+          "renewable_percentage": 15,
+          "marketing_claim": "Starting as low as $0.095/kWh"
+        },
+        
+        "current_annual_cost": 1545.00,
+        "current_avg_monthly_bill": 128.75,
+        "summer_bills": {
+          "june": 179.05,
+          "july": 251.55,
+          "august": 261.70,
+          "september": 213.85,
+          "average": 226.54
+        },
+        
+        "demo_talking_points": {
+          "problem": "Variable rates spike to $0.145 during his peak summer usage months",
+          "emotional_hook": "Not using too much energy - the plan structure is predatory",
+          "expected_savings_range": "200-300/year with fixed rate protection"
+        }
+      },
+  
+      {
+        "customer_id": "CUST_003",
+        "scenario_type": "supplier_switch",
+        "customer_name": "David Park",
+        "location": "Austin, TX",
+        "zip_code": "78731",
+        "customer_type": "residential_solar",
+        "profile_description": "Solar panel owner getting poor buyback rates on excess generation",
+        
+        "solar_system": {
+          "system_size_kw": 8.5,
+          "install_date": "2022-11-01",
+          "total_investment": 18000,
+          "expected_annual_generation": 12750,
+          "avg_monthly_generation": 1063
+        },
+        
+        "usage_history": [
+          { 
+            "month": "2024-01", 
+            "consumption_kwh": 980,
+            "generation_kwh": 750,
+            "net_from_grid": 230,
+            "net_to_grid": 0
+          },
+          { 
+            "month": "2024-02",
+            "consumption_kwh": 920,
+            "generation_kwh": 820,
+            "net_from_grid": 100,
+            "net_to_grid": 0
+          },
+          { 
+            "month": "2024-03",
+            "consumption_kwh": 850,
+            "generation_kwh": 980,
+            "net_from_grid": 0,
+            "net_to_grid": 130
+          },
+          { 
+            "month": "2024-04",
+            "consumption_kwh": 920,
+            "generation_kwh": 1120,
+            "net_from_grid": 0,
+            "net_to_grid": 200
+          },
+          { 
+            "month": "2024-05",
+            "consumption_kwh": 1050,
+            "generation_kwh": 1280,
+            "net_from_grid": 0,
+            "net_to_grid": 230
+          },
+          { 
+            "month": "2024-06",
+            "consumption_kwh": 1380,
+            "generation_kwh": 1350,
+            "net_from_grid": 30,
+            "net_to_grid": 0
+          },
+          { 
+            "month": "2024-07",
+            "consumption_kwh": 1620,
+            "generation_kwh": 1420,
+            "net_from_grid": 200,
+            "net_to_grid": 0
+          },
+          { 
+            "month": "2024-08",
+            "consumption_kwh": 1580,
+            "generation_kwh": 1380,
+            "net_from_grid": 200,
+            "net_to_grid": 0
+          },
+          { 
+            "month": "2024-09",
+            "consumption_kwh": 1250,
+            "generation_kwh": 1180,
+            "net_from_grid": 70,
+            "net_to_grid": 0
+          },
+          { 
+            "month": "2024-10",
+            "consumption_kwh": 1020,
+            "generation_kwh": 1050,
+            "net_from_grid": 0,
+            "net_to_grid": 30
+          },
+          { 
+            "month": "2024-11",
+            "consumption_kwh": 880,
+            "generation_kwh": 820,
+            "net_from_grid": 60,
+            "net_to_grid": 0
+          },
+          { 
+            "month": "2024-12",
+            "consumption_kwh": 950,
+            "generation_kwh": 750,
+            "net_from_grid": 200,
+            "net_to_grid": 0
+          }
+        ],
+        
+        "usage_stats": {
+          "total_consumption_kwh": 13400,
+          "total_generation_kwh": 12900,
+          "net_grid_purchase_kwh": 1090,
+          "total_excess_generation_kwh": 590,
+          "solar_offset_percentage": 96.3,
+          "excess_generation_months": ["March", "April", "May", "October"]
+        },
+        
+        "current_plan": {
+          "provider": "Reliant Energy",
+          "plan_name": "Simple Rate 12",
+          "plan_id": "PLAN_002",
+          "rate_per_kwh": 0.120,
+          "rate_per_kwh_buyback": 0.065,
+          "monthly_fee": 9.95,
+          "rate_structure": "fixed",
+          "contract_start_date": "2022-12-01",
+          "contract_end_date": "2025-12-01",
+          "contract_length_months": 36,
+          "early_termination_fee": 175,
+          "renewable_percentage": 23,
+          "net_metering_type": "Wholesale rate buyback"
+        },
+        
+        "current_annual_cost": 220.00,
+        "buyback_credits_received": 38.35,
+        
+        "demo_talking_points": {
+          "problem": "Getting wholesale buyback rate of $0.065/kWh when retail plans offer $0.110/kWh",
+          "emotional_hook": "Invested $18k in solar but plan is stealing $280/year in lost buyback value",
+          "expected_savings_range": "250-350/year with better net metering",
+          "mic_drop": "Could have NEGATIVE annual electricity cost with right plan"
+        }
+      },
+  
+      {
+        "customer_id": "CUST_004",
+        "scenario_type": "behavior_change",
+        "customer_name": "Jessica Chen",
+        "location": "Austin, TX",
+        "zip_code": "78757",
+        "customer_type": "residential_ev_owner",
+        "profile_description": "Tesla owner who already charges overnight but on flat-rate plan",
+        
+        "ev_details": {
+          "vehicle": "Tesla Model 3",
+          "charging_location": "Home - Level 2 charger",
+          "avg_monthly_charging_kwh": 400,
+          "typical_charging_window": "11pm - 7am",
+          "current_behavior": "Already charging during off-peak hours"
+        },
+        
+        "usage_history": [
+          { "month": "2024-01", "kwh": 1180, "baseline_kwh": 780, "ev_kwh": 400 },
+          { "month": "2024-02", "kwh": 1150, "baseline_kwh": 750, "ev_kwh": 400 },
+          { "month": "2024-03", "kwh": 1100, "baseline_kwh": 700, "ev_kwh": 400 },
+          { "month": "2024-04", "kwh": 1080, "baseline_kwh": 680, "ev_kwh": 400 },
+          { "month": "2024-05", "kwh": 1120, "baseline_kwh": 720, "ev_kwh": 400 },
+          { "month": "2024-06", "kwh": 1350, "baseline_kwh": 950, "ev_kwh": 400 },
+          { "month": "2024-07", "kwh": 1580, "baseline_kwh": 1180, "ev_kwh": 400 },
+          { "month": "2024-08", "kwh": 1620, "baseline_kwh": 1220, "ev_kwh": 400 },
+          { "month": "2024-09", "kwh": 1450, "baseline_kwh": 1050, "ev_kwh": 400 },
+          { "month": "2024-10", "kwh": 1200, "baseline_kwh": 800, "ev_kwh": 400 },
+          { "month": "2024-11", "kwh": 1130, "baseline_kwh": 730, "ev_kwh": 400 },
+          { "month": "2024-12", "kwh": 1190, "baseline_kwh": 790, "ev_kwh": 400 }
+        ],
+        
+        "usage_stats": {
+          "total_annual_kwh": 14150,
+          "avg_monthly_kwh": 1179,
+          "baseline_avg_kwh": 779,
+          "ev_monthly_kwh": 400,
+          "ev_percentage": 33.9,
+          "peak_month": "August",
+          "usage_pattern": "Consistent EV charging + seasonal home usage variation"
+        },
+        
+        "current_plan": {
+          "provider": "Green Mountain Energy",
+          "plan_name": "Pollution Free e-Plus 12",
+          "plan_id": "PLAN_001",
+          "rate_per_kwh": 0.118,
+          "monthly_fee": 9.95,
+          "rate_structure": "fixed",
+          "contract_start_date": "2024-01-15",
+          "contract_end_date": "2025-01-15",
+          "contract_length_months": 12,
+          "early_termination_fee": 150,
+          "renewable_percentage": 100,
+          "time_of_use": false
+        },
+        
+        "current_annual_cost": 1789.65,
+        "current_avg_monthly_bill": 149.14,
+        "ev_portion_of_bill": 47.20,
+        
+        "behavior_change_opportunity": {
+          "type": "Switch to time-of-use plan",
+          "current_behavior": "Already charging overnight (optimal)",
+          "required_change": "None - already has ideal behavior",
+          "optimal_plan_id": "PLAN_012",
+          "optimal_plan_name": "Octopus Energy - Intelligent Octopus",
+          "super_offpeak_rate": 0.045,
+          "potential_savings": "350-400/year",
+          "note": "EV charging would cost $18/month instead of $47/month at super off-peak rates"
+        },
+        
+        "demo_talking_points": {
+          "problem": "Paying flat $0.118/kWh for overnight EV charging when time-of-use offers $0.045/kWh",
+          "opportunity": "Already has perfect charging habits - just needs right plan structure",
+          "expected_savings_range": "350-400/year",
+          "app_engagement": "EV cost tracking, charging window optimization, real-time rate notifications"
+        }
+      },
+  
+      {
+        "customer_id": "CUST_005",
+        "scenario_type": "behavior_change",
+        "customer_name": "Marcus & Lisa Thompson",
+        "location": "Austin, TX",
+        "zip_code": "78739",
+        "customer_type": "residential_pool_owner",
+        "profile_description": "Family with pool - equipment runs during peak hours, could easily shift to off-peak",
+        
+        "pool_details": {
+          "pool_size": "20000 gallons",
+          "equipment": "Pool pump + heat pump",
+          "current_schedule": "2pm - 10pm daily (8 hours)",
+          "monthly_pool_kwh": 450,
+          "optimal_schedule": "10pm - 6am daily (8 hours)",
+          "timer_cost": 75
+        },
+        
+        "usage_history": [
+          { "month": "2024-01", "kwh": 950, "baseline_kwh": 900, "pool_kwh": 50, "notes": "Winter - minimal pool heating" },
+          { "month": "2024-02", "kwh": 980, "baseline_kwh": 920, "pool_kwh": 60 },
+          { "month": "2024-03", "kwh": 1100, "baseline_kwh": 850, "pool_kwh": 250, "notes": "Spring - heating starts" },
+          { "month": "2024-04", "kwh": 1200, "baseline_kwh": 900, "pool_kwh": 300 },
+          { "month": "2024-05", "kwh": 1320, "baseline_kwh": 920, "pool_kwh": 400, "notes": "Full pool season begins" },
+          { "month": "2024-06", "kwh": 1650, "baseline_kwh": 1150, "pool_kwh": 500 },
+          { "month": "2024-07", "kwh": 1850, "baseline_kwh": 1300, "pool_kwh": 550, "notes": "Peak usage - AC + pool" },
+          { "month": "2024-08", "kwh": 1880, "baseline_kwh": 1320, "pool_kwh": 560 },
+          { "month": "2024-09", "kwh": 1680, "baseline_kwh": 1180, "pool_kwh": 500 },
+          { "month": "2024-10", "kwh": 1280, "baseline_kwh": 980, "pool_kwh": 300 },
+          { "month": "2024-11", "kwh": 1050, "baseline_kwh": 900, "pool_kwh": 150 },
+          { "month": "2024-12", "kwh": 1020, "baseline_kwh": 950, "pool_kwh": 70 }
+        ],
+        
+        "usage_stats": {
+          "total_annual_kwh": 15960,
+          "avg_monthly_kwh": 1330,
+          "baseline_avg_kwh": 1023,
+          "pool_avg_kwh": 307,
+          "pool_peak_kwh": 560,
+          "pool_percentage": 23.1,
+          "peak_month": "August",
+          "usage_pattern": "Seasonal variation for both home and pool usage"
+        },
+        
+        "current_plan": {
+          "provider": "Rhythm Energy",
+          "plan_name": "Texas Rate Lock 12",
+          "plan_id": "PLAN_005",
+          "rate_per_kwh": 0.115,
+          "monthly_fee": 9.95,
+          "rate_structure": "fixed",
+          "contract_start_date": "2024-03-01",
+          "contract_end_date": "2025-03-01",
+          "contract_length_months": 12,
+          "early_termination_fee": 150,
+          "renewable_percentage": 100,
+          "time_of_use": false
+        },
+        
+        "current_annual_cost": 1955.35,
+        "current_avg_monthly_bill": 162.95,
+        "pool_portion_of_annual_cost": 423.00,
+        
+        "behavior_change_opportunity": {
+          "type": "Install timer + switch to time-of-use plan",
+          "current_behavior": "Pool equipment runs 2pm-10pm (peak hours)",
+          "required_change": "Install $75 timer, shift to 10pm-6am operation",
+          "behavior_change_difficulty": "Easy - one-time timer installation",
+          "optimal_plan_id": "PLAN_012",
+          "optimal_plan_name": "Octopus Energy - Intelligent Octopus",
+          "pool_current_cost": "35.28/month average",
+          "pool_optimized_cost": "13.82/month average (super off-peak)",
+          "annual_pool_savings": 257.52,
+          "total_potential_savings": "380-420/year after timer cost",
+          "payback_period": "2.3 months for timer investment"
+        },
+        
+        "demo_talking_points": {
+          "problem": "Pool equipment runs during peak hours when electricity is most expensive",
+          "opportunity": "Simple $75 timer + plan switch saves $380/year with zero lifestyle impact",
+          "expected_savings_range": "380-420/year",
+          "app_engagement": "Pool schedule optimization, seasonal cost tracking, timer setup guidance, gamification of savings"
+        }
+      }
+    ],
+  
+    "metadata": {
+      "location": "Austin, TX",
+      "utility": "Austin Energy",
+      "data_period": "2024-01 to 2024-12",
+      "supplier_switch_scenarios": 3,
+      "behavior_change_scenarios": 2,
+      "notes": "All customers are Austin-based. Preferences should be captured via UI during demo, not hardcoded."
+    }
+  }

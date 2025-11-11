@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Build outputs
+/.next/
+/out/
+/build
+/dist
+
+# Environment variables
+.env
+.env*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+logs/
+
+# Cache
+.cache/
+.parcel-cache/
+*.tsbuildinfo
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+/coverage
+
+# Temporary
+tmp/
+temp/
+*.tmp
+
+# Large data files (already analyzed)
+# Uncomment if these become too large for Claude context
+# data/raw_utility_data.json
+# data/supplier_plans.json
