@@ -64,7 +64,7 @@ export default function PlanCard({ plan }: PlanCardProps) {
         <div>
           <div className="text-sm text-gray-600">Rate</div>
           <div className="font-semibold">
-            ${plan.rate_per_kwh?.toFixed(3)}/kWh
+            {plan.rate_per_kwh ? `$${plan.rate_per_kwh.toFixed(3)}/kWh` : 'Variable (TOU)'}
           </div>
         </div>
         <div>

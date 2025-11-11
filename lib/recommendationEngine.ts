@@ -67,7 +67,7 @@ export async function generateRecommendations(
   const recommendations: PlanRecommendation[] = top3.map((plan, index) => {
     const savings = insights.financial_analysis.current_annual_cost - plan.projected_cost;
 
-    return buildPlanRecommendation(plan, index + 1, savings, explanations[index]);
+    return buildPlanRecommendation(plan, index + 1, savings, explanations[index], profile);
   });
 
   // 9. Detect behavior optimization opportunities
@@ -127,7 +127,8 @@ function buildPlanRecommendation(
   plan: ScoredPlan,
   rank: number,
   savings: number,
-  explanation: string
+  explanation: string,
+  profile: UserProfile
 ): PlanRecommendation {
   const financialImpact: FinancialImpact = {
     projected_annual_cost: plan.projected_cost,

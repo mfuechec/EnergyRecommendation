@@ -144,10 +144,11 @@ Generate a clear, friendly 2-sentence explanation for why this plan is recommend
 ## Requirements
 
 1. **Reference the customer's specific situation** - Use their actual usage pattern or current pain point
-2. **Highlight the most compelling benefit** - Savings amount, renewable %, or key feature
-3. **Use plain language** - Avoid jargon
-4. **Be conversational** - Write like you're talking to a friend
-5. **Keep it brief** - Exactly 2 sentences, no more
+2. **Highlight the most compelling benefit** - Savings amount, renewable %, or key feature like flexibility
+3. **If month-to-month contract** - Emphasize the no-commitment flexibility advantage over locked contracts
+4. **Use plain language** - Avoid jargon
+5. **Be conversational** - Write like you're talking to a friend
+6. **Keep it brief** - Exactly 2 sentences, no more
 
 Generate the explanation now. Return ONLY the 2-sentence explanation. Do not include labels, JSON, or any formatting.`;
 }
